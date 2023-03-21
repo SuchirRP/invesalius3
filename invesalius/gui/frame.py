@@ -1144,6 +1144,16 @@ class MenuBar(wx.MenuBar):
         # TOOLS
         #tools_menu = wx.Menu()
 
+        #NetworkSettings
+        #Added
+        network_setting = wx.Menu()
+        network_setting.Append(const.ID_DICOM_SERVER, _("Dicom Server"))
+        network_setting.AppendSeparator()
+        network_setting.Append(const.ID_DICOM_NODE, _("Dicom Node"))
+        network_setting.AppendSeparator()
+        network_setting.Append(const.ID_DICOM_QUERY, _("Dicom Query"))
+
+
         # OPTIONS
         options_menu = wx.Menu()
         options_menu.Append(const.ID_PREFERENCES, _("Preferences..."))
@@ -1185,6 +1195,7 @@ class MenuBar(wx.MenuBar):
         self.Append(tools_menu, _(u"Tools"))
         self.Append(plugins_menu, _(u"Plugins"))
         #self.Append(tools_menu, "Tools")
+        self.Append(network_setting, _("Network Settings"))
         self.Append(options_menu, _("Options"))
         self.Append(mode_menu, _("Mode"))
         self.Append(help_menu, _("Help"))
